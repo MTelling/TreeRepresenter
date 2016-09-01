@@ -7,8 +7,10 @@ public class Node {
     private int type;
     private Node left = null;
     private Node right = null;
+    private Node parent = null;
 
-    public Node(int key, int type) {
+    public Node(Node parent, int key, int type) {
+        this.parent = parent;
         this.key = key;
         this.type = type;
     }
@@ -18,16 +20,8 @@ public class Node {
         return key;
     }
 
-    public void setKey(int key) {
-        this.key = key;
-    }
-
     public int getType() {
         return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
     }
 
     public Node getLeft() {
@@ -45,4 +39,10 @@ public class Node {
     public void setRight(Node right) {
         this.right = right;
     }
+
+    public Node getParent() {
+        return parent;
+    }
+
+    public void setParent(Node parent) { this.parent = parent; }
 }

@@ -7,9 +7,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
-import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 import jdk.nashorn.internal.runtime.regexp.joni.exception.ValueException;
 
 import java.net.URL;
@@ -55,8 +53,6 @@ public class Controller implements Initializable {
 
     private Tree tree;
 
-    private Selected selected = null;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -99,13 +95,6 @@ public class Controller implements Initializable {
         insert_txt.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER) {
                 insertKey();
-            }
-        });
-
-        r1_1.getParent().setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.ESCAPE && selected != null) {
-                circles[selected.index].setStroke(Paint.valueOf("#000000"));
-                selected = null;
             }
         });
 
@@ -210,23 +199,21 @@ public class Controller implements Initializable {
 
         //Set action listener on circles
         circles[pos].setOnMouseClicked(e -> {
-            circles[pos].setStroke(Paint.valueOf("#00BFFF"));
-            selected = new Selected(key, pos);
+            delete(key);
         });
 
         texts[pos].setOnMouseClicked(e -> {
-            circles[pos].setStroke(Paint.valueOf("#00BFFF"));
-            selected = new Selected(key, pos);
+            delete(key);
         });
     }
-}
 
-class Selected {
-    int key;
-    int index;
+    private void delete(int key) {
 
-    public Selected(int key, int index) {
-        this.key = key;
-        this.index = index;
+        tree.delete(key);
+
+        //Somethings going away, so redraw the entire tree.
+        removeTree();
+        drawTree();
     }
+
 }
