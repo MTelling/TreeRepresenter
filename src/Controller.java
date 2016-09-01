@@ -1,11 +1,15 @@
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
+import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 import jdk.nashorn.internal.runtime.regexp.joni.exception.ValueException;
 
 import java.net.URL;
@@ -16,21 +20,24 @@ import java.util.*;
  */
 public class Controller implements Initializable {
 
-    public Circle r1_1,
+    @FXML
+    private Circle r1_1,
             r2_1, r2_2,
             r3_1, r3_2, r3_3, r3_4,
             r4_1, r4_2, r4_3, r4_4, r4_5, r4_6, r4_7, r4_8,
             r5_1, r5_2, r5_3, r5_4, r5_5, r5_6, r5_7, r5_8,
             r5_9, r5_10, r5_11, r5_12, r5_13, r5_14, r5_15, r5_16;
 
-    public Text r1_1_lbl,
+    @FXML
+    private Text r1_1_lbl,
             r2_1_lbl, r2_2_lbl,
             r3_1_lbl, r3_2_lbl, r3_3_lbl, r3_4_lbl,
             r4_1_lbl, r4_2_lbl, r4_3_lbl, r4_4_lbl, r4_5_lbl, r4_6_lbl, r4_7_lbl, r4_8_lbl,
             r5_1_lbl, r5_2_lbl, r5_3_lbl, r5_4_lbl, r5_5_lbl, r5_6_lbl, r5_7_lbl, r5_8_lbl,
             r5_9_lbl, r5_10_lbl, r5_11_lbl, r5_12_lbl, r5_13_lbl, r5_14_lbl, r5_15_lbl, r5_16_lbl;
 
-    public Line l2_1, l2_2,
+    @FXML
+    private Line l2_1, l2_2,
             l3_1, l3_2, l3_3, l3_4,
             l4_1, l4_2, l4_3, l4_4, l4_5, l4_6, l4_7, l4_8,
             l5_1, l5_2, l5_3, l5_4, l5_5, l5_6, l5_7, l5_8,
@@ -40,10 +47,15 @@ public class Controller implements Initializable {
     private Text[] texts;
     private Line[] lines;
 
-    public Button insert_btn;
-    public TextField insert_txt;
+    @FXML
+    private Button insert_btn;
+
+    @FXML
+    private TextField insert_txt;
 
     private Tree tree;
+
+    private Selected selected = null;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -90,21 +102,43 @@ public class Controller implements Initializable {
             }
         });
 
+        r1_1.getParent().setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ESCAPE && selected != null) {
+                circles[selected.index].setStroke(Paint.valueOf("#000000"));
+                selected = null;
+            }
+        });
 
     }
 
+    /**
+     * Responsible for calling the insert function in the Tree-class and then redrawing.
+     */
     private void insertKey() {
-        int key = Integer.parseInt(insert_txt.getText());
-        insert_txt.setText("");
-
-
         try {
+            int key = Integer.parseInt(insert_txt.getText());
             tree.insert(key, 0);
-        } catch (ValueException | HeightException ex) {
-            System.out.println(ex.getMessage());
-        }
+            insert_txt.setText("");
+            drawTree();
 
-        drawTree();
+        } catch (ValueException | HeightException e) {
+            displayError(e.getMessage());
+        } catch (NumberFormatException e) {
+            displayError("You can only input numbers for now!");
+        }
+    }
+
+    /**
+     * Displays a warning box.
+     * @param msg
+     */
+    private void displayError(String msg) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("ERROR");
+        alert.setHeaderText(null);
+        alert.setContentText(msg);
+
+        alert.showAndWait();
     }
 
     /**
@@ -124,6 +158,10 @@ public class Controller implements Initializable {
         }
     }
 
+
+    /**
+     * Draws the entire tree, by using a sort of BFS.
+     */
     private void drawTree() {
 
         if (tree.getRoot() == null) return;
@@ -151,11 +189,14 @@ public class Controller implements Initializable {
 
 
         }
-
-
-
     }
 
+    /**
+     * Makes the circle at a given position appear with the right key and color.
+     * @param pos
+     * @param key
+     * @param type
+     */
     private void setCircle(int pos, int key, int type) {
         circles[pos].setVisible(true);
         if (type == 1) circles[pos].setFill(Paint.valueOf("#FF0000"));
@@ -166,5 +207,26 @@ public class Controller implements Initializable {
         if (pos > 0) {
             lines[pos - 1].setVisible(true);
         }
+
+        //Set action listener on circles
+        circles[pos].setOnMouseClicked(e -> {
+            circles[pos].setStroke(Paint.valueOf("#00BFFF"));
+            selected = new Selected(key, pos);
+        });
+
+        texts[pos].setOnMouseClicked(e -> {
+            circles[pos].setStroke(Paint.valueOf("#00BFFF"));
+            selected = new Selected(key, pos);
+        });
+    }
+}
+
+class Selected {
+    int key;
+    int index;
+
+    public Selected(int key, int index) {
+        this.key = key;
+        this.index = index;
     }
 }
