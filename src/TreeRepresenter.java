@@ -22,7 +22,7 @@ public class TreeRepresenter extends Application {
 
         Scene scene = new Scene(root, 1000, 350);
 
-        primaryStage.setTitle("Graph Representer");
+        primaryStage.setTitle("Tree Representer");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
