@@ -314,9 +314,9 @@ public class Controller implements Initializable {
 
         addNodeToTraversalList(node);
 
-        inorderTraverse(node.getLeft());
+        preorderTraverse(node.getLeft());
 
-        inorderTraverse(node.getRight());
+        preorderTraverse(node.getRight());
     }
 
     private void postorderTraverse(Node node) {
@@ -324,9 +324,9 @@ public class Controller implements Initializable {
             return;
         }
 
-        inorderTraverse(node.getLeft());
+        postorderTraverse(node.getLeft());
 
-        inorderTraverse(node.getRight());
+        postorderTraverse(node.getRight());
 
         addNodeToTraversalList(node);
     }
