@@ -20,9 +20,7 @@ public class Tree {
 
         while (current != null) {
 
-            int currentKey = current.getKey();
-
-            if (currentKey == searchKey) {
+            if (current.getKey() == searchKey) {
                 //There are three cases:
 
                 //CASE 1: Node to be deleted is a leaf.
@@ -57,16 +55,33 @@ public class Tree {
                 //CASE 3: Node has two children.
 
 
-
-
                 current = null;
 
-            } else if (currentKey > searchKey) {
+            } else if (current.getKey() > searchKey) { //Traverse the tree if there is no match at current node.
                 current = current.getLeft();
             } else {
                 current = current.getRight();
             }
 
+
+        }
+    }
+
+    public void successor(int searchKey) {
+        Node current = root;
+
+        while (current != null) {
+
+
+            if (current.getKey() > searchKey) { //Traverse the tree if there is no match at current node.
+                current = current.getLeft();
+            } else if (current.getKey() < searchKey){
+                current = current.getRight();
+            } else {
+
+
+
+            }
 
         }
     }
@@ -97,7 +112,7 @@ public class Tree {
             while (!placed) {
 
                 //Throw error if height exceeds 5.
-                if (height > 3) throw new HeightException("Too high!");
+                if (height > 3) throw new HeightException("The tree currently has a maximal height of 5!");
 
                 //Check if the node should be placed to the right or left.
                 if (current.getKey() < key) {

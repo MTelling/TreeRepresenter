@@ -1,13 +1,16 @@
+import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 import jdk.nashorn.internal.runtime.regexp.joni.exception.ValueException;
 
 import java.net.URL;
@@ -45,13 +48,19 @@ public class Controller implements Initializable {
     private Text[] texts;
     private Line[] lines;
 
+    private Queue<Integer> traversalOrder = new LinkedList<>();
+    private Color highlightColor = Color.valueOf("#ff0000");
+    private int animationDuration = 1500;
+
     @FXML
-    private Button insert_btn;
+    private Button insert_btn, inorder_btn, preorder_btn, postorder_btn;
 
     @FXML
     private TextField insert_txt;
 
     private Tree tree;
+
+    private boolean isAnimating = false;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -98,7 +107,76 @@ public class Controller implements Initializable {
             }
         });
 
+        inorder_btn.setOnMouseClicked(e -> {
+            if (!isAnimating) {
+                System.out.print("Inorder traversal: ");
+                inorderTraverse(tree.getRoot());
+                System.out.println("");
+                animateTraverse();
+            }
+        });
+
+        preorder_btn.setOnMouseClicked(e -> {
+            if (!isAnimating) {
+                System.out.print("Preorder traversal: ");
+                preorderTraverse(tree.getRoot());
+                System.out.println("");
+                animateTraverse();
+            }
+        });
+
+        postorder_btn.setOnMouseClicked(e -> {
+            if (!isAnimating) {
+                System.out.print("Postorder traversal: ");
+                postorderTraverse(tree.getRoot());
+                System.out.println("");
+                animateTraverse();
+            }
+        });
+
     }
+
+    private void animateTraverse() {
+
+            isAnimating = true;
+
+            Timeline timeline = new Timeline(new KeyFrame(
+                    Duration.millis(animationDuration),
+                    ae -> highlightNode(traversalOrder.poll())));
+            timeline.setCycleCount(traversalOrder.size() + 1);
+            timeline.setOnFinished(ae -> endAnimation());
+            timeline.play();
+
+    }
+
+    private void highlightNode(Integer i ) {
+        if (i != null) {
+
+            StrokeTransition strokeTransition = new StrokeTransition(
+                    Duration.millis(animationDuration),
+                    circles[i],
+                    Color.BLACK,
+                    highlightColor
+            );
+            strokeTransition.play();
+        }
+    }
+
+    private void endAnimation() {
+        for (Circle circle: circles) {
+
+            StrokeTransition strokeTransition = new StrokeTransition(
+                    Duration.millis(animationDuration),
+                    circle,
+                    highlightColor,
+                    Color.BLACK
+            );
+            strokeTransition.play();
+        }
+
+        isAnimating = false;
+    }
+
 
     /**
      * Responsible for calling the insert function in the Tree-class and then redrawing.
@@ -214,6 +292,53 @@ public class Controller implements Initializable {
         //Somethings going away, so redraw the entire tree.
         removeTree();
         drawTree();
+    }
+
+
+    private void inorderTraverse(Node node) {
+        if (node == null) {
+            return;
+        }
+
+        inorderTraverse(node.getLeft());
+
+        addNodeToTraversalList(node);
+
+        inorderTraverse(node.getRight());
+    }
+
+    private void preorderTraverse(Node node) {
+        if (node == null) {
+            return;
+        }
+
+        addNodeToTraversalList(node);
+
+        inorderTraverse(node.getLeft());
+
+        inorderTraverse(node.getRight());
+    }
+
+    private void postorderTraverse(Node node) {
+        if (node == null) {
+            return;
+        }
+
+        inorderTraverse(node.getLeft());
+
+        inorderTraverse(node.getRight());
+
+        addNodeToTraversalList(node);
+    }
+
+
+    private void addNodeToTraversalList(Node node) {
+        System.out.print(node.getKey() + " ");
+        for (int i = 0; i< texts.length; i++) {
+            if (texts[i].getText().equalsIgnoreCase(node.getKey() +"")) {
+                traversalOrder.add(i);
+            }
+        }
     }
 
 }

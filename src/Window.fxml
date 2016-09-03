@@ -109,5 +109,8 @@
 
       <TextField fx:id="insert_txt" layoutX="27.0" layoutY="14.0" prefHeight="27.0" prefWidth="98.0" />
       <Button fx:id="insert_btn" layoutX="132.0" layoutY="14.0" mnemonicParsing="false" text="Insert" />
+      <Button fx:id="inorder_btn" layoutX="848.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" text="Inorder Traverse" />
+      <Button fx:id="preorder_btn" layoutX="848.0" layoutY="46.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" text="Preorder Traverse" />
+      <Button fx:id="postorder_btn" layoutX="848.0" layoutY="80.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" text="Postorder Traverse" />
    </children>
 </Pane>
