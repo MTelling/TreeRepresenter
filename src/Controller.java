@@ -50,7 +50,7 @@ public class Controller implements Initializable {
 
     private Queue<Integer> traversalOrder = new LinkedList<>();
     private Color highlightColor = Color.valueOf("#ff0000");
-    private int animationDuration = 1500;
+    private int animationDuration = 1200;
 
     @FXML
     private Button insert_btn, inorder_btn, preorder_btn, postorder_btn;
@@ -66,7 +66,7 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         //Init an empty tree.
-        tree = new Tree();
+        tree = new BinarySearchTree();
 
         //Read all javafx objects into arrays.
         circles = new Circle[]{
@@ -184,7 +184,7 @@ public class Controller implements Initializable {
     private void insertKey() {
         try {
             int key = Integer.parseInt(insert_txt.getText());
-            tree.insert(key, 0);
+            tree.insert(key);
             insert_txt.setText("");
             drawTree();
 
