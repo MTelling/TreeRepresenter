@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <Line fx:id="l2_1" endX="-242.0" endY="60.0" layoutX="502.0" layoutY="50.0" />
+      <Line fx:id="l2_2" endX="242.0" endY="60.0" layoutX="502.0" layoutY="50.0" />
+
+      <Line fx:id="l3_1" endX="-120.0" endY="60.0" layoutX="260.0" layoutY="110.0" />
+      <Line fx:id="l3_2" endX="120.0" endY="60.0" layoutX="260.0" layoutY="110.0" />
+      <Line fx:id="l3_3" endX="-120.0" endY="60.0" layoutX="742.0" layoutY="110.0" />
+      <Line fx:id="l3_4" endX="120.0" endY="60.0" layoutX="742.0" layoutY="110.0" />
+
+      <Line fx:id="l4_1" endX="-60.0" endY="60.0" layoutX="140.0" layoutY="171.0" />
+      <Line fx:id="l4_2" endX="60.0" endY="60.0" layoutX="140.0" layoutY="171.0" />
+      <Line fx:id="l4_3" endX="-60.0" endY="60.0" layoutX="380.0" layoutY="171.0" />
+      <Line fx:id="l4_4" endX="60.0" endY="60.0" layoutX="380.0" layoutY="171.0" />
+      <Line fx:id="l4_5" endX="-60.0" endY="60.0" layoutX="620.0" layoutY="171.0" />
+      <Line fx:id="l4_6" endX="60.0" endY="60.0" layoutX="620.0" layoutY="171.0" />
+      <Line fx:id="l4_7" endX="-60.0" endY="60.0" layoutX="860.0" layoutY="171.0" />
+      <Line fx:id="l4_8" endX="60.0" endY="60.0" layoutX="860.0" layoutY="171.0" />
+
+
+      <Line fx:id="l5_1" endX="-30.0" endY="60.0" layoutX="80.0" layoutY="231.0" />
+      <Line fx:id="l5_2" endX="30.0" endY="60.0" layoutX="80.0" layoutY="231.0" />
+      <Line fx:id="l5_3" endX="-30.0" endY="60.0" layoutX="200.0" layoutY="231.0" />
+      <Line fx:id="l5_4" endX="30.0" endY="60.0" layoutX="200.0" layoutY="231.0" />
+      <Line fx:id="l5_5" endX="-30.0" endY="60.0" layoutX="320.0" layoutY="231.0" />
+      <Line fx:id="l5_6" endX="30.0" endY="60.0" layoutX="320.0" layoutY="231.0" />
+      <Line fx:id="l5_7" endX="-30.0" endY="60.0" layoutX="440.0" layoutY="231.0" />
+      <Line fx:id="l5_8" endX="30.0" endY="60.0" layoutX="440.0" layoutY="231.0" />
+      <Line fx:id="l5_9" endX="-30.0" endY="60.0" layoutX="560.0" layoutY="231.0" />
+      <Line fx:id="l5_10" endX="30.0" endY="60.0" layoutX="560.0" layoutY="231.0" />
+      <Line fx:id="l5_11" endX="-30.0" endY="60.0" layoutX="680.0" layoutY="231.0" />
+      <Line fx:id="l5_12" endX="30.0" endY="60.0" layoutX="680.0" layoutY="231.0" />
+      <Line fx:id="l5_13" endX="-30.0" endY="60.0" layoutX="800.0" layoutY="231.0" />
+      <Line fx:id="l5_14" endX="30.0" endY="60.0" layoutX="800.0" layoutY="231.0" />
+      <Line fx:id="l5_15" endX="-30.0" endY="60.0" layoutX="920.0" layoutY="231.0" />
+      <Line fx:id="l5_16" endX="30.0" endY="60.0" layoutX="920.0" layoutY="231.0" />
+
+
+      <Circle fx:id="r1_1" fill="WHITE" layoutX="502.0" layoutY="50.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r2_2" fill="WHITE" layoutX="742.0" layoutY="110.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r2_1" fill="WHITE" layoutX="260.0" layoutY="110.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r3_3" fill="WHITE" layoutX="622.0" layoutY="171.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r3_4" fill="WHITE" layoutX="862.0" layoutY="171.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r4_2" fill="WHITE" layoutX="200.0" layoutY="231.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r3_1" fill="WHITE" layoutX="140.0" layoutY="171.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r4_3" fill="WHITE" layoutX="322.0" layoutY="231.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r3_2" fill="WHITE" layoutX="382.0" layoutY="171.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r4_8" fill="WHITE" layoutX="922.0" layoutY="231.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r4_7" fill="WHITE" layoutX="802.0" layoutY="231.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r4_6" fill="WHITE" layoutX="682.0" layoutY="231.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r4_5" fill="WHITE" layoutX="562.0" layoutY="231.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r4_4" fill="WHITE" layoutX="442.0" layoutY="231.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r4_1" fill="WHITE" layoutX="80.0" layoutY="231.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_1" fill="WHITE" layoutX="50.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_2" fill="WHITE" layoutX="110.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_4" fill="WHITE" layoutX="230.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_3" fill="WHITE" layoutX="170.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_6" fill="WHITE" layoutX="352.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_5" fill="WHITE" layoutX="292.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_8" fill="WHITE" layoutX="472.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_7" fill="WHITE" layoutX="412.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_10" fill="WHITE" layoutX="592.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_9" fill="WHITE" layoutX="532.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_12" fill="WHITE" layoutX="712.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_11" fill="WHITE" layoutX="652.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_14" fill="WHITE" layoutX="832.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_13" fill="WHITE" layoutX="772.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_16" fill="WHITE" layoutX="952.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="r5_15" fill="WHITE" layoutX="892.0" layoutY="291.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text fx:id="r1_1_lbl" layoutX="472.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r2_1_lbl" layoutX="230.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r2_2_lbl" layoutX="712.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r3_2_lbl" layoutX="352.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r3_1_lbl" layoutX="110.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r4_1_lbl" layoutX="50.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r4_2_lbl" layoutX="170.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r4_3_lbl" layoutX="292.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r4_4_lbl" layoutX="412.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r4_5_lbl" layoutX="532.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r3_3_lbl" layoutX="592.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r3_4_lbl" layoutX="832.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r4_6_lbl" layoutX="652.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r4_7_lbl" layoutX="772.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r4_8_lbl" layoutX="892.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_1_lbl" layoutX="20.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_2_lbl" layoutX="80.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_3_lbl" layoutX="140.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_4_lbl" layoutX="200.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_5_lbl" layoutX="262.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_6_lbl" layoutX="322.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_7_lbl" layoutX="382.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_8_lbl" layoutX="442.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_9_lbl" layoutX="502.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_10_lbl" layoutX="562.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_11_lbl" layoutX="622.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_12_lbl" layoutX="682.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_13_lbl" layoutX="742.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_14_lbl" layoutX="802.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_15_lbl" layoutX="862.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+      <Text fx:id="r5_16_lbl" layoutX="922.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="60.0" />
+
+      <TextField fx:id="insert_txt" layoutX="27.0" layoutY="14.0" prefHeight="27.0" prefWidth="98.0" />
+      <Button fx:id="insert_btn" layoutX="132.0" layoutY="14.0" mnemonicParsing="false" text="Insert" />
+      <Button fx:id="inorder_btn" layoutX="848.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" text="Inorder Traverse" />
+      <Button fx:id="preorder_btn" layoutX="848.0" layoutY="46.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" text="Preorder Traverse" />
+      <Button fx:id="postorder_btn" layoutX="848.0" layoutY="80.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" text="Postorder Traverse" />
+   </children>
+</Pane>

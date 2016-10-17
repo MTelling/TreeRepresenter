@@ -50,7 +50,7 @@ public class Controller implements Initializable {
 
     private Queue<Integer> traversalOrder = new LinkedList<>();
     private Color highlightColor = Color.valueOf("#ff0000");
-    private int animationDuration = 1200;
+    private final int ANIMATION_TIME = 400;
 
     @FXML
     private Button insert_btn, inorder_btn, preorder_btn, postorder_btn;
@@ -141,7 +141,7 @@ public class Controller implements Initializable {
             isAnimating = true;
 
             Timeline timeline = new Timeline(new KeyFrame(
-                    Duration.millis(animationDuration),
+                    Duration.millis(ANIMATION_TIME),
                     ae -> highlightNode(traversalOrder.poll())));
             timeline.setCycleCount(traversalOrder.size() + 1);
             timeline.setOnFinished(ae -> endAnimation());
@@ -153,7 +153,7 @@ public class Controller implements Initializable {
         if (i != null) {
 
             StrokeTransition strokeTransition = new StrokeTransition(
-                    Duration.millis(animationDuration),
+                    Duration.millis(ANIMATION_TIME),
                     circles[i],
                     Color.BLACK,
                     highlightColor
@@ -166,7 +166,7 @@ public class Controller implements Initializable {
         for (Circle circle: circles) {
 
             StrokeTransition strokeTransition = new StrokeTransition(
-                    Duration.millis(animationDuration),
+                    Duration.millis(ANIMATION_TIME),
                     circle,
                     highlightColor,
                     Color.BLACK
